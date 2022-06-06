@@ -1,44 +1,50 @@
-import React from 'react';
+import "./app.sass";
 
-import { renderRoutes } from "react-router-config"
-import { BrowserRouter, Link } from "react-router-dom"
-import { default as classNames } from "classnames"
+import React from "react";
+import { BrowserRouter, Link } from "react-router-dom";
+import { renderRoutes } from "react-router-config";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-import Icon from "@mdi/react"
-import { IconButton } from "@rmwc/icon-button"
-import { mdiCopyright, mdiMenu } from "@mdi/js"
+import { routes } from "./routes";
+import classNames from "classnames";
 
-import { routes } from "./router"
+const App : React.FC = () =>{
 
-const App : React.FC = () => 
-{
+    const PageLogo = require("./img/HeroesLogo.svg").default;
+    const [openMenu, setOpenMenu] = React.useState(false);
 
-  const [serverName, setSertverName] = React.useState('Lorem Ipsum');
-  const [openMenu, setOpenMenu] = React.useState('');
+    return(
+        <React.Fragment>
+            <BrowserRouter>
+                <nav className="heroes-menu">
 
-  return (
-    <React.Fragment>
-      <BrowserRouter>
-        <nav className="mt-navigation">
-          <IconButton icon={<Icon path={mdiMenu} title="Menú" />} onClick={() => setOpenMenu( openMenu === '' ? 'active' : '' )}/>
-          <div className="mt-logo"></div>
-          <ul className={classNames("mt-nav-options", openMenu)}>
-            {[ routes.map(({path, state}) => (<li><Link to={path as string} className={!state.class? '' : state.class} onClick={() => setOpenMenu( openMenu === 'active' ? '' : 'active' ) } >{state.title}</Link></li>)) ]}
-          </ul>
-          <Link to="/Login" className="mt-mobile-login-btn">Login</Link>
-        </nav>
-        {renderRoutes(routes)}
-        <footer>
-          <p>copyright <Icon path={mdiCopyright} title="copy"/> { (new Date()).getFullYear() } <span>{ serverName }</span> .all rights reserved. 
-            <ul>
-              <li><a href="!#" target="_blank">ElitePvP</a></li>
-              <li><a href="!#" target="_blank">M2 PServer</a></li>
-            </ul>
-          </p>
-        </footer>
-      </BrowserRouter>
-    </React.Fragment>
-  );
-}
+                    <button className={classNames('btn-open-menu', openMenu? 'active' : '')}>
+                        <FontAwesomeIcon icon={!openMenu? faEllipsisVertical : faTimes} onClick={() => setOpenMenu(openMenu? false : true)}/>
+                    </button>
 
-export{ App }
+                    <Link to="/">
+                        <div className="heroes-logo">
+                            <img src={PageLogo} alt="logo" height="60" />
+                        </div>
+                    </Link>
+                    <div className={classNames('navigation', openMenu? 'active' : '')}>
+                        <ul>
+                            {routes.map(({path, state}) => state.visible ? (
+
+                                <li><Link to={path as string}>{state.title}</Link></li>
+                            ) : '')}
+                        </ul>
+
+                        <div className="heroes-search">
+                            <FontAwesomeIcon icon={faSearch}/>
+                        </div>
+                    </div>
+                </nav>
+                {renderRoutes(routes)}
+            </BrowserRouter>
+        </React.Fragment>
+    );
+};
+
+export{App};

@@ -1,0 +1,120 @@
+div.heros-container
+    width: 100%
+    height: auto
+    min-height: 330px
+    padding-top: 3rem
+    padding-bottom: 3rem
+    display: flex
+    justify-content: space-around
+    align-items: start
+    flex-wrap: wrap
+
+    & > div.all-hero-container
+        width: 48%
+        min-width: 300px
+        height: auto
+        min-height: 600px
+        background-size: cover
+        margin-top: 2rem
+        position: relative
+        display: flex
+        align-items: end
+        justify-content: end
+        flex-direction: column
+
+        &::before
+            content: ''
+            width: 100%
+            height: 100%
+            background: rgba(0, 0, 0, .2)
+            position: absolute
+            top: 0
+            left: 0
+
+        & > article
+            width: 100%
+            height: auto
+            min-height: 200px
+            position: relative
+            z-index: 1
+
+            & > div.hero-status
+                display: flex
+                flex-direction: row
+
+                & > div.icon-status
+                    width: 3rem
+                    height: 3rem
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                    &.green
+                        background: #03A696
+
+                    &.orange
+                        background: #F29F05
+
+                    & > svg
+                        width: 2rem
+                        height: 2rem
+                        color: #f9f9fb
+
+                & > h1.title
+                    color: #f9f9fb
+                    text-transform: capitalize
+                    letter-spacing: .5rem
+                    height: 3rem
+                    margin-left: 1rem
+                    display: flex
+                    align-items: center
+                    font-size: 1.3rem
+                    font-weight: 400
+
+            & > p
+                margin-left: 3rem
+                margin-right: 3rem
+                margin-top: 1rem
+                color: #f9f9fb
+                font-weight: 100
+                letter-spacing: .2rem
+                font-size: .9rem
+
+            & > div.more
+                margin-left: 3rem
+                margin-top: 2rem
+
+                & > button
+                    background: transparent
+                    color: #f9f9fb
+                    letter-spacing: .3rem
+                    padding: .5rem 1.5rem
+                    border: 1px solid #f9f9fb
+                    font-weight: 400
+
+                    &:hover
+                        cursor: pointer
+
+                    &:focus
+                        outline: none  
+
+        & > div.all-hero-container-votation-percent
+            display: flex
+            flex-direction: row
+            width: 100%
+            height: 50px
+            position: relative
+            z-index: 1
+            margin-top: 2rem
+
+            & > div
+                display: flex
+                align-items: center
+                justify-content: center
+                color: #f9f9fb
+                
+                &.likes
+                    background: #03A696
+
+                &.dislikes
+                    background: #F29F05

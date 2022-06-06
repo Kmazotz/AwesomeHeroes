@@ -1,4 +1,2 @@
-export * from "./ServerStatus"
-export * from "./BestPlayerInfo"
-export * from "./TopInfo"
-export * from "./RankingTable"
+export * from "./Hero";
+export * from "./ListHero";

@@ -1,0 +1,141 @@
+nav.heroes-menu
+    width: calc(100% - 20rem)
+    height: 100px
+    display: flex
+    position: absolute
+    flex-direction: row
+    justify-content: space-between
+    margin-left: 10rem
+    z-index: 3
+    user-select: none
+    -ms-user-select: none
+    -moz-user-select: none
+
+    & > button.btn-open-menu
+        display: none
+
+    & > a > div.heroes-logo
+        height: 100px
+        width: 200px
+        display: flex
+        align-items: center
+        justify-content: center
+        align-items: center
+
+    & div.navigation
+        width: (calc( 50% +  50px))
+        min-width: 350px
+        height: 100px
+        display: flex
+        flex-direction: row
+
+        & > ul
+            list-style: none
+            display: flex
+            width: calc( 100% - 50px )
+            min-width: 300px
+            height: 100px
+            display: flex
+            justify-content: space-around
+            align-items: center
+
+            & li > a
+                text-decoration: none
+                color: #f9f9fb
+
+        & > div.heroes-search
+            width: 50px
+            height: 100px
+            display: flex
+            justify-items: center
+            justify-content: center
+            align-items: center
+            color: #f9f9fb
+
+            &:hover
+                cursor: pointer
+
+header.app-header
+    width: 100%
+    height: 100vh
+    min-height: 400px
+    display: flex
+    justify-content: center
+    align-content: center
+    position: relative
+    flex-direction: column
+
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        background: rgba(0,0, 0, .5)
+        position: absolute
+        top: 0
+        left: 0
+
+@media screen and (max-width: 812px)
+    nav.heroes-menu
+        width: 100%
+        margin-left: 0rem
+        position: absolute
+        flex-direction: column
+        height: 100vh
+
+        & > button.btn-open-menu
+            display: flex
+            width: 100px
+            height: 100px
+            background: transparent
+            border: none
+            position: absolute
+            z-index: 1
+            align-items: center
+            justify-content: center
+            margin-left: 2rem
+
+            &.active
+                position: fixed
+
+            & > svg
+                width: 30px
+                height: 30px
+                color: #f9f9fb
+
+                &:hover
+                    cursor: pointer
+
+            &:hover
+                cursor: default
+            &:focus
+                outline: none
+        
+        & > a > div.heroes-logo
+            width: 100%
+        
+        & > div.navigation
+            display: none
+            width: 100%
+            height: 100vh
+            position: fixed
+            background: rgba(0, 0, 0, .5)
+            backdrop-filter: blur(5px)
+            -webkit-backdrop-filter: blur(5px)
+            align-items: center
+            justify-content: center
+
+            &.active
+                display: flex
+
+            & > ul
+                flex-direction: column
+                height: 50%
+            
+            & > div.heroes-search
+                position: absolute
+                background: #f9f9fb
+                width: 50px
+                height: 50px
+                top: 0
+                right: 0
+                color: #373737

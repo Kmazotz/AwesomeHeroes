@@ -1,4 +1,3 @@
-export * from './home'
-export * from './register'
-export * from './download'
-export * from './ranking'
+export * from "./home"
+export * from "./allHeroes"
+export * from "./about"
