@@ -1,0 +1,254 @@
+/**Vars**/
+
+/**Green**/
+$green1: #15FF00
+$green2: #00FF7F
+
+/**Blue**/
+$blue1: #6A5ACD
+$blue2: #4682B4
+$blue3: #00C5FF
+$blue4: #87CEEB
+
+/**Principal**/
+$red: #FF0000
+$terra: #D2691E
+$banana: #E3CF57
+$yellow: #FFFF00
+
+/**Grey**/
+$grey: #808080
+
+/**White*+/
+$white: #FFFAFA
+
+/**Black**/
+$black: #111111
+
+::-moz-selection 
+  background: $red
+  color: $white
+
+::selection 
+  background: $red
+  color: $white
+  
+*
+  margin: 0
+  padding: 0
+
+html,body
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  background: $black
+
+nav.mt-navigation
+  width: 100%
+  min-width: 230px
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  z-index: 5
+  background: $white
+  top: 0
+
+  & svg
+    width: 30px
+    height: 30px
+    cursor: pointer
+    outline: none
+    display: none
+
+  ul.mt-nav-options
+    width: calc(80% - 150px)
+    min-width: 230px
+    height: 70px
+    display: flex
+    align-items: center
+    justify-content: space-around
+    list-style: none
+    position: relative
+
+    li
+      height: 80px
+      display: flex
+      justify-content: center
+      align-items: center
+      cursor: pointer
+
+    li > a
+      text-decoration: none
+      text-transform: uppercase
+      color: $black
+      letter-spacing: 4px
+      font-size: .8rem
+      font-weight: 400
+      height: 70px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      &.mt-login-button
+        color: $white
+        background: $red
+        height: 2.5rem
+        width: 7rem
+        border: 1.5px solid $red
+        transition-duration: .4s
+        border-radius: 3px
+
+        &:hover
+          background: $white
+          color: $red
+
+  & .mt-mobile-login-btn
+    color: $white
+    background: $red
+    height: 2.5rem
+    width: 7rem
+    border: 1.5px solid $red
+    transition-duration: .4s
+    border-radius: 3px
+    text-decoration: none
+    text-transform: uppercase
+    font-size: .8rem
+    letter-spacing: .4rem
+    display: none
+    align-items: center
+    justify-content: center
+
+    &:hover
+      background: $white
+      color: $red
+
+footer
+  width: 100%
+  height: 4rem
+  background: $black
+  display: flex
+  justify-content: center
+  align-items: center
+  user-select: none
+
+  & p
+    color: $banana
+    text-transform: uppercase
+    letter-spacing: .4rem
+    font-size: .7rem
+    font-weight: 400
+    display: flex
+    flex-direction: row
+    position: relative
+
+    & svg
+      width: 15px
+
+    & span
+      color: $white
+      font-weight: 600
+
+    & ul
+      list-style: none
+      display: flex
+      justify-content: row
+
+      & li
+        position: relative
+
+        &:nth-child(1)::after
+          content: ""
+          width: .1rem
+          height: .6rem
+          top: .2rem
+          right: -0.3rem
+          background: $banana
+          position: absolute
+          z-index: 2
+
+        &:nth-child(2)
+          margin-left: 1rem
+
+        & a
+          text-decoration: none
+          color: $white
+
+@media screen and (max-width: 845px)
+  footer
+    height: 250px
+
+    & p
+      text-align: center
+      flex-direction: column
+      line-height: 30px
+
+      & svg
+        position: relative
+        margin: auto
+
+      & ul li:nth-child(1)::after
+        top: .7rem
+
+@media screen and (max-width: 1065px)
+  nav.mt-navigation
+    height: 70px
+    justify-content: flex-start
+
+    & svg
+      display: flex
+      position: relative
+      left: 3rem
+    
+    & .mt-mobile-login-btn
+      display: flex
+      position: absolute
+      right: 3rem     
+
+  nav.mt-navigation ul.mt-nav-options
+    width: 100%
+    height: calc(100vh - 72px)
+    background: rgba(0, 0, 0, .8)
+    position: absolute
+    top: 70px
+    z-index: 3
+    flex-direction: column
+    flex-wrap: wrap
+    display: none
+
+    &.active
+      display: flex
+
+    & li
+      margin-left: 5rem
+      margin-right: 5rem
+
+    & li:nth-child(6)
+        display: none
+
+    & li > a
+      padding: 0rem 2rem
+      color: $banana
+
+      &:before
+        content: "["
+        margin-right: .2rem
+        font-size: 1.5rem
+        transition-duration: .3s
+
+      &:after
+        content: "]"
+        margin-left: .2rem
+        font-size: 1.5rem
+        transition-duration: .3s
+
+      &:hover:before
+        margin-right: 1.2rem
+        color: $terra
+
+      &:hover:after
+        margin-left: 1.2rem
+        color: $terra
+    
+
+      
+
+        

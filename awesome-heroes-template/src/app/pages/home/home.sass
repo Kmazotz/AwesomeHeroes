@@ -1,0 +1,305 @@
+/**Vars**/
+
+/**Green**/
+$green1: #15FF00
+$green2: #00FF7F
+
+/**Blue**/
+$blue1: #6A5ACD
+$blue2: #4682B4
+$blue3: #00C5FF
+$blue4: #87CEEB
+
+/**Principal**/
+$red: #FF0000
+$terra: #D2691E
+$banana: #E3CF57
+$yellow: #FFFF00
+
+/**Grey**/
+$grey: #808080
+
+/**White*+/
+$white: #FFFAFA
+
+/**Black**/
+$black: #111111
+
+header.m2-app-header
+    width: 100%
+    height: 100vh
+    min-height: 400px
+    background: url('./../../img/fantasy-bg.jpg') no-repeat
+    background-position: center
+    background-size: cover
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    user-select: none
+    margin-top: 70px
+
+    &::before
+        content: ''
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, .5)
+        position: absolute
+        top: 0
+        left: 0
+    
+    &::after
+        content: ''
+        width: 100%
+        height: 290px
+        background: rgb(17,17,17)
+        background: linear-gradient(0deg, rgba(17,17,17,1) 7%, rgba(255,255,255,0) 100%)
+        position: absolute
+        bottom: 0
+
+    & article
+        width: 80%
+        min-width: 230px
+        height: auto
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        position: relative
+        z-index: 2
+
+        & h1
+            color: white
+            text-transform: uppercase
+            font-weight: 600
+            letter-spacing: 10px
+            text-align: center
+
+        & .mt-statistics-values
+            width: 80%
+            min-width: 230px
+            height: auto
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: space-around
+
+            & div
+                width: 150px
+                height: 150px
+                margin-top: 50px
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                overflow: hidden
+
+                & p.mt-statistic-number
+                    font-size: 1.5rem
+                    letter-spacing: 10px
+                    width: 100%
+                    height: auto
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    color: $banana
+
+                    & span
+                        font-weight: 900
+
+                & .mt-statistics-title
+                    color: $white
+                    width: 100%
+                    font-size: .7rem
+                    text-align: center
+                    text-transform: uppercase
+                    margin-top: 10px
+                    letter-spacing: 5px
+
+    div.mt-server-status
+        margin: auto
+        width: 230px
+        height: auto
+        position: absolute
+        left: 0rem
+        right: 0rem
+        bottom: 5rem
+        z-index: 2
+
+        & p
+            text-transform: uppercase
+            font-size: .7rem
+            color: $white
+            font-weight: 600
+            text-align: center
+
+            & span
+                margin-left: 1rem
+                font-weight: 900
+
+
+@media screen and (max-width: 955px)
+
+    header.m2-app-header article .mt-statistics-values
+        justify-content: center
+
+        & div
+            margin-top: 0px
+            width: 230px
+
+    header.m2-app-header div.mt-server-status
+        bottom: 2rem
+
+
+section.mt-app-info
+    width: 100%
+    height: auto
+    min-height: 400px
+    background: $black
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin: auto
+
+    & article.mt-about
+        width: 80%
+        min-width: 230px
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding: 50px 0px
+
+        & h1
+            color: $banana
+            min-width: 230px
+            text-align: center
+            letter-spacing: 1.5rem
+            font-size: 1.5rem
+            font-weight: 400
+            text-transform: uppercase
+            margin: auto
+
+        & p
+            color: $white
+            letter-spacing: .5rem
+            text-align: center
+            margin-top: 2rem
+            width: 80%
+            min-width: 230px
+            font-weight: 400
+            font-size: .8rem
+            line-height: 1.7rem
+            text-transform: uppercase
+
+    & .mdc-tab .mdc-tab__content .mdc-tab__text-label
+        color: $grey
+
+    & .mdc-tab--active .mdc-tab__content .mdc-tab__text-label
+        color: $banana
+
+    & .mdc-tab-indicator__content--underline
+        border-color: $banana
+
+    & .mdc-tab__ripple::before, .mdc-tab__ripple::after
+        background: $banana
+
+section.mt-best-player-info
+    background: $black
+    min-height: 400px
+    padding: 50px 0px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    & article
+        width: 80%
+        min-width: 230px
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        & h1
+            color: $banana
+            min-width: 230px
+            text-align: center
+            letter-spacing: 1.5rem
+            font-size: 1.5rem
+            font-weight: 400
+            text-transform: uppercase
+            margin: auto
+
+section.mt-best-global-ranking
+    width: 100%
+    padding: 50px 0px
+    background: $black
+    display: flex
+    justify-content: center
+    align-items: center
+
+    & .mt-tab-info
+        width: 60%
+        min-width: 230px
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        height: auto
+
+        & h1
+            color: $banana
+            min-width: 230px
+            text-align: center
+            letter-spacing: 1.5rem
+            font-size: 1.5rem
+            font-weight: 400
+            text-transform: uppercase
+            margin: auto
+
+        & .mdc-tab-bar
+            margin-top: 3rem
+
+        & .mdc-tab .mdc-tab__content .mdc-tab__text-label
+            color: $grey
+
+        & .mdc-tab--active .mdc-tab__content .mdc-tab__text-label
+            color: $banana
+
+        & .mdc-tab-indicator__content--underline
+            border-color: $banana
+
+        & .mdc-tab__ripple::before, .mdc-tab__ripple::after
+            background: $banana
+
+        & .mt-best-golbal-ranking--table 
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+
+            & a
+                width: auto
+                height: auto
+                color: $banana
+                text-transform: uppercase
+                font-weight: 400
+                letter-spacing: .4rem
+                font-size: .7rem
+                position: relative
+                margin-top: 5rem
+                text-decoration: none
+
+                &:before
+                    content: "["
+                    position: relative
+                    right: 1rem
+                    font-size: 1rem
+
+                &:after
+                    content: "]"
+                    position: relative
+                    left: 1rem
+                    font-size: 1rem
