@@ -1,2 +1,2 @@
 # AwesomeHeroes
-React Awesome Heroes Template
+## React Template Heroes Votation 
