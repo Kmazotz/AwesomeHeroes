@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AwesomeHeroes/static/css/main.45bbc1c5.css",
+    "main.js": "/AwesomeHeroes/static/js/main.8dfa39b2.js",
+    "static/media/ironman.jpg": "/AwesomeHeroes/static/media/ironman.6c0d0c2474c338922b7a.jpg",
+    "static/media/HeroesLogo.svg": "/AwesomeHeroes/static/media/HeroesLogo.a7448677345f372a174f1122a2bd1657.svg",
+    "index.html": "/AwesomeHeroes/index.html",
+    "main.45bbc1c5.css.map": "/AwesomeHeroes/static/css/main.45bbc1c5.css.map",
+    "main.8dfa39b2.js.map": "/AwesomeHeroes/static/js/main.8dfa39b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45bbc1c5.css",
+    "static/js/main.8dfa39b2.js"
+  ]
+}
